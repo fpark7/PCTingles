@@ -44,7 +44,7 @@
 
 								<section>
 									<h4>Registration Page</h4>
-									<form method="post" action="#">
+									<form method="post" action="registerUser.php">
 										<div class="row uniform">
 											<div class="6u 12u$(xsmall)">
 												<input type="text" name="name" id="name" value="" placeholder="Name" required/>
@@ -62,44 +62,44 @@
 												<div class="select-wrapper">
 													<select name="school" id="school" required>
 														<option value="">-School-</option>
-														<option value="1">College of Arts and Sciences</option>
-														<option value="1">School of Engineering and Applied Sciences</option>
-														<option value="1">Frank Batten School of Leadership and Public Policy</option>
-														<option value="1">Curry School of Education</option>
-														<option value="1">School of Architecture</option>
-														<option value="1">McIntire School of Commerce</option>
+														<option value="CLAS">College of Arts and Sciences</option>
+														<option value="SEAS">School of Engineering and Applied Sciences</option>
+														<option value="BATN">Frank Batten School of Leadership and Public Policy</option>
+														<option value="CURR">Curry School of Education</option>
+														<option value="ARCH">School of Architecture</option>
+														<option value="COMM">McIntire School of Commerce</option>
 													</select>
 												</div>
 											</div>
-											<div class="4u 12u$(small)">
-												<input type="radio" id="demo-priority-1" name="demo-priority" checked>
+											<div class="3u 12u$(small)">
+												<input type="radio" id="demo-priority-1" name="year" value="first" checked>
 												<label for="demo-priority-1">1st Year</label>
 											</div>
-											<div class="4u 12u$(small)">
-												<input type="radio" id="demo-priority-2" name="demo-priority">
+											<div class="3u 12u$(small)">
+												<input type="radio" id="demo-priority-2" name="year" value="second">
 												<label for="demo-priority-2">2nd Year</label>
 											</div>
-											<div class="4u$ 12u$(small)">
-												<input type="radio" id="demo-priority-3" name="demo-priority">
+											<div class="3u 12u$(small)">
+												<input type="radio" id="demo-priority-3" name="year" value="third">
 												<label for="demo-priority-3">3rd Year</label>
 											</div>
-											<div class="4u$ 12u$(small)">
-												<input type="radio" id="demo-priority-4" name="demo-priority">
-												<label for="demo-priority-4">4th Year/Graduate Student</label>
+											<div class="3u$ 12u$(small)">
+												<input type="radio" id="demo-priority-4" name="year" value="fourth">
+												<label for="demo-priority-4">4th Year/Graduate</label>
 											</div>
 									
-											<div class="6u 12u$(small)">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Sign me up for Newsletters!</label>
+											<div class="12u$ 12u$(small)">
+												<input type="checkbox" id="newsletter" name="newsletter">
+												<label for="newsletter">Sign me up for Newsletters!</label>
 											</div>
 											<!--<div class="6u$ 12u$(small)">
 												<input type="checkbox" id="demo-human" name="demo-human" checked>
 												<label for="demo-human">Not a robot</label>
 											</div>-->
-											<div class="6u 12u$(large)">
+											<div class="12u$ 12u$(large)">
 												<input type="text" name="address" id="address" value="" placeholder="Local Street Address" required/>
 											</div>
-											<div class="4u 12u$(xxsmall)">
+											<div class="7u 12u$(xxsmall)">
 												<input type="text" name="city" id="city" value="" placeholder="City" required/>
 											</div>
 											<div class="2u 12u$(xxxsmall)">
