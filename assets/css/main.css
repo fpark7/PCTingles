@@ -1946,6 +1946,14 @@
 			border-radius: 3px;
 			display: block;
 		}
+		.image.checkmark {
+			float: left;
+			margin: 0 2em 2em 0;
+			top: 0.25em;
+		}
+		.image.checkmark img{
+			width: 200px;
+		}
 
 		.image.left {
 			float: left;
@@ -3700,7 +3708,7 @@
 /* Footer */
 
 	#footer {
-		padding: 6em 0 4em 0 ;
+		padding: 4em 0 2em 0 ; /*padding: 6em 0 4em 0;*/
 		background-color: #1d242a;
 		text-align: center;
 	}
