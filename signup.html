@@ -56,7 +56,7 @@
 												<input type="password" name="password" id="password" value="" placeholder="Enter Password" required/>
 											</div>
 											<div class="6u 12u$(xsmall)">
-												<input type="password" name="password" id="password" value="" placeholder="Verify Password" required/>
+												<input type="password" name="password" id="password_verify" value="" placeholder="Verify Password" required/>
 											</div>
 											<div class="12u$">
 												<div class="select-wrapper">
@@ -103,7 +103,7 @@
 												<input type="text" name="city" id="city" value="" placeholder="City" required/>
 											</div>
 											<div class="2u 12u$(xxxsmall)">
-												<input type="text" name="state" id="state" value="" placeholder="State (XX)" required/>
+												<input type="text" name="state" id="state" maxlength = "2" value="" placeholder="State (XX)" required/>
 											</div>
 											<div class="3u 12u$(xxsmall)">
 												<input type="text" name="zip-code" id="zip-code" value="" placeholder="5 Digit ZIP Code" required/>
@@ -151,6 +151,21 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+				var password = document.getElementById("password")
+				var confirm_password = document.getElementById("password_verify");
+
+				function validatePassword(){
+				  if(password.value != confirm_password.value) {
+				    confirm_password.setCustomValidity("Passwords Don't Match");
+				  } else {
+				    confirm_password.setCustomValidity('');
+				  }
+				}
+
+				password.onchange = validatePassword;
+				confirm_password.onkeyup = validatePassword;
+			</script>
 
 	</body>
 </html>
