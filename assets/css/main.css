@@ -1952,7 +1952,7 @@
 			top: 0.25em;
 		}
 		.image.checkmark img{
-			width: 200px;
+			max-width: 200px;
 		}
 
 		.image.left {
