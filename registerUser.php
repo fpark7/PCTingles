@@ -19,7 +19,9 @@ $split[6] = $_POST["address"];
 $split[7] = $_POST["city"];
 $split[8] = $_POST["state"];
 $split[9] = $_POST["zip-code"];
-$split[10] = $_POST["demo-message"];
+if(isset($_POST["demo-message"])) {
+	$split[10] = $_POST["demo-message"];
+}
 
 $email = $split[1];
 $password = $split[2];
@@ -35,7 +37,11 @@ $address = $split[6];
 $city = $split[7];
 $state = $split[8];
 $zip = $split[9];
-$extra = $split[10];
+if(isset($split[10])) {
+	$extra = $split[10];
+} else {
+	$extra = "";
+}
 
 $query = "INSERT INTO Login (email, password, name, school, year, newsletter, address, city, state, zip, extra) VALUES ('$email', '$password', '$name', '$school', '$year', '$newsletter', '$address', '$city', '$state', '$zip', '$extra')";
 $result = $db->query($query);
