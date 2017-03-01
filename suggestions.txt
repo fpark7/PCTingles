@@ -1,0 +1,11 @@
+Suggestions from Milestone 1:
+	Shorten/make the about us page less wall of text
+		-fixed by adding photo. (not a lot of text anyways)
+	Add a back to top dynamic button
+		-tricky js. should we make the button floating?
+	Think about 2 other functionalities for Milestone 5 (Business Plan - what do we offer?)
+		
+	Added functionality can be like the contact us page for the 24/7 support
+
+Other Additions?:
+	Are users making an account? Ask for password?
