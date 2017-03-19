@@ -47,7 +47,7 @@
 									<form method="post" action="registerUser.php">
 										<div class="row uniform">
 											<div class="6u 12u$(xsmall)">
-												<input type="text" name="name" id="name" value="" placeholder="Name" required/>
+												<input type="text" name="name" id="name" value="" placeholder="Name" pattern="[a-zA-Z ]+" title="Letters Only" required/>
 											</div>
 											<div class="6u$ 12u$(xsmall)">
 												<input type="email" name="email" id="email" value="" placeholder="Email (e.g. mst3k@virginia.edu)" required/>
@@ -100,13 +100,13 @@
 												<input type="text" name="address" id="address" value="" placeholder="Local Street Address" required/>
 											</div>
 											<div class="7u 12u$(xxsmall)">
-												<input type="text" name="city" id="city" value="" placeholder="City" required/>
+												<input type="text" name="city" id="city" value="" placeholder="City" pattern="[a-zA-Z ]+" title="Letters Only." required/>
 											</div>
 											<div class="2u 12u$(xxxsmall)">
-												<input type="text" name="state" id="state" maxlength = "2" value="" placeholder="State (XX)" required/>
+												<input type="text" name="state" id="state" pattern ="[a-zA-z]{2}" title="Two Letters Only" value="" placeholder="State (XX)" required/>
 											</div>
 											<div class="3u 12u$(xxsmall)">
-												<input type="text" name="zip-code" id="zip-code" value="" placeholder="5 Digit ZIP Code" required/>
+												<input type="text" name="zip-code" id="zip-code" value="" placeholder="5 Digit ZIP Code" pattern="[0-9]{5}" title="5 Numbers Only." required/>
 											</div>
 
 											<div class="12u$">
