@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Send Mail Results</title>
-</head>
-<body>
 <?php
   // Set path for the PHPMailer files.  These must have been previously
   // unzipped and placed into the stated directory.  Be sure to match
@@ -38,25 +32,24 @@
   $mail->Username = "pctingles@gmail.com"; // email username
   $mail->Password = "pctingles4753"; // email password
 
-  $sender = strip_tags($_POST["sender"]);
-  $receiver = strip_tags($_POST["receiver"]);
-  $subj = strip_tags($_POST["subject"]);
-  $msg = strip_tags($_POST["msg"]);
+  //$sender = strip_tags($_POST["sender"]);
+  //$receiver = strip_tags($_POST["receiver"]);
+  //$subj = strip_tags($_POST["subject"]);
+  //$msg = strip_tags($_POST["msg"]);
+
+  $subj = "Sign-up Confirmation";
+  $msg = "Thank you for signing up!  You have a new account at P.C.Tingles.";
 
   // Put information into the message
-  $mail->addAddress($receiver);
+  $mail->addAddress($email);
   $mail->SetFrom('donotreply@virginia.edu', 'P.C.Tingles Mail Bot - DO NOT REPLY');
   $mail->Subject = "$subj";
   $mail->Body = "$msg";
 
   //echo 'Everything ok so far' . var_dump($mail);
-  if(!$mail->send()) {
+  /*if(!$mail->send()) {
     echo 'Message could not be sent.';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
    } 
-   else { echo 'Message has been sent'; }
+   else { echo 'Message has been sent'; }*/
 ?>
-  </br>
-  <a href="adminView.html">Click here to return to main page.</a>
-</body>
-</html>

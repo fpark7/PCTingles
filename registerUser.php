@@ -54,7 +54,11 @@ if(!$result) {
 if ($pass) {
 	header("Location: confirm.html");
 }
+
+include 'signupconfirmsendmail.php';
+
 ?>
+
 
 <html>
 	<head>
