@@ -8,8 +8,8 @@ endif;
 
 //Read POST/whatever array here to get login info
 //Set email and password in $email and $pass
-$email = "felix@virginia.edu";
-$pass = "asdf";
+$email = $_POST["email"];
+$pass = $_POST["password"];
 
 $userArray = array();
 $query = "SELECT * FROM login";
@@ -36,12 +36,12 @@ echo "</table>";
 echo "<br>";
 
 if($success) {
-	//This is where you set session variables like so: $_SESSION["name"] = Something
+	$_SESSION["name"] = $_POST["name"]; //DID I DO THIS RIGHT?
 	echo "Login Success";
-	//header("Location: index.html"); //Either redirect to success page or make this page be success
+	header("Location: memindex.html"); //Either redirect to success page or make this page be success
 } else {
 	echo "Login Fail";
-	//header("Location: signinfail.html"); //Redirect to fail page
+	header("Location: login_fail.html"); //Redirect to fail page
 }
 
 /*

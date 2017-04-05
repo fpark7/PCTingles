@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	felix
+-->
+<html>
+	<head>
+		<title>Update Info | P.C.Tingles</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">P.C.Tingles</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="about.html">About Us</a></li>
+                                            <li><a href="sales.html">Rentals</a></li>
+											<!--<li><a href="elements.html">Rentals</a></li>-->
+											<li><a href="#">Log In</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<section class="wrapper style5">
+							<div class="inner">
+
+								<section>
+									<h4>Update Personal Information</h4>
+									<form method="post" action="">
+										<div class="row uniform">
+											<div class="6u 12u$(xsmall)">
+												<input type="text" name="name" id="name" value="" placeholder="Name" pattern="[a-zA-Z ]+" title="Letters Only" required/>
+											</div>
+											<div class="6u$ 12u$(xsmall)">
+												<input type="email" name="email" id="email" value="" placeholder="Email (e.g. mst3k@virginia.edu)" required/>
+											</div>
+											<div class="6u 12u$(xsmall)">
+												<input type="password" name="password" id="password" value="" placeholder="Enter Password" required/>
+											</div>
+											<div class="6u 12u$(xsmall)">
+												<input type="password" name="password" id="password_verify" value="" placeholder="Verify Password" required/>
+											</div>
+
+											<!--<div class="6u$ 12u$(small)">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>-->
+											<div class="12u$ 12u$(large)">
+												<input type="text" name="address" id="address" value="" placeholder="Local Street Address" required/>
+											</div>
+											<div class="7u 12u$(xxsmall)">
+												<input type="text" name="city" id="city" value="" placeholder="City" pattern="[a-zA-Z ]+" title="Letters Only." required/>
+											</div>
+											<div class="2u 12u$(xxxsmall)">
+												<input type="text" name="state" id="state" pattern ="[a-zA-z]{2}" title="Two Letters Only" value="" placeholder="State (XX)" required/>
+											</div>
+											<div class="3u 12u$(xxsmall)">
+												<input type="text" name="zip-code" id="zip-code" value="" placeholder="5 Digit ZIP Code" pattern="[0-9]{5}" title="5 Numbers Only." required/>
+											</div>
+
+											<div class="12u$">
+												<ul class="actions">
+													<li><input type="submit" value="Update!" class="special" /></li>
+													<li><input type="reset" value="Reset" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+
+
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; P.C.Tingles</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+				var password = document.getElementById("password")
+				var confirm_password = document.getElementById("password_verify");
+
+				function validatePassword(){
+				  if(password.value != confirm_password.value) {
+				    confirm_password.setCustomValidity("Passwords Don't Match");
+				  } else {
+				    confirm_password.setCustomValidity('');
+				  }
+				}
+
+				password.onchange = validatePassword;
+				confirm_password.onkeyup = validatePassword;
+			</script>
+
+	</body>
+</html>
