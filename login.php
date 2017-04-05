@@ -36,15 +36,18 @@ echo "</table>";
 echo "<br>";
 
 if($success) {
+	//This is where you set session variables like so: $_SESSION["name"] = Something
 	echo "Login Success";
+	//header("Location: index.html"); //Either redirect to success page or make this page be success
 } else {
 	echo "Login Fail";
+	//header("Location: signinfail.html"); //Redirect to fail page
 }
 
 /*
 To make a page redirect if a user isn't logged in copy and paste this at the top:
 if(!isset($_SESSION["username"])) {
-	header("Location: login.php");
+	header("Location: index.html");
 }
 */
 ?>
