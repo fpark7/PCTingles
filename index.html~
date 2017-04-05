@@ -32,7 +32,7 @@
 											<li><a href="generic.html">About Us</a></li>
 											<li><a href="elements.html">Rentals</a></li>
 											<li><a href="#">Sign Up</a></li>
-											<li><a href="#">Log In</a></li>
+											<li><?php if(!isset($_SESSION["name"])) { echo "<a href=\"login.html\">Log In</a>"; } else { echo "<a href=\"mem_index.php\">Member Home</a>";} ?></li>
 										</ul>
 									</div>
 								</li>
