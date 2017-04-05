@@ -1,10 +1,16 @@
 <!DOCTYPE HTML>
+<?php
+session_start();
+if(!isset($_SESSION["name"])) {
+    header("Location: index.html");
+}
+?>
 <!--
 	felix
 -->
 <html>
 	<head>
-		<title>Sign Up | P.C.Tingles</title>
+		<title>Update Info | P.C.Tingles</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -28,7 +34,7 @@
 										<ul>
 											<li><a href="index.html">Home</a></li>
 											<li><a href="about.html">About Us</a></li>
-											<li><?php if(isset($_SESSION["name"])) { echo "<a href=\"login.html\">Log In</a>"; } else { echo "<a href=\"mem_index.php\">Member Home</a>";} ?></li>
+											<li><a href="logout.php">Log Out</a></li>
 										</ul>
 									</div>
 								</li>
@@ -42,69 +48,28 @@
 							<div class="inner">
 
 								<section>
-									<h4>Registration Page</h4>
-									<form method="post" action="registerUser.php">
-										<div class="row uniform">
+									<h4>Update Personal Information</h4>
+                                    <form method="post" action="">
+                                        <div class="row uniform">
                                             <div class="6u 12u$(xsmall)">
                                                 <th>Name</th>
-												<input type="text" name="name" id="name" value="" placeholder="First Last" pattern="[a-zA-Z ]+" title="Letters Only" required/>
-											</div>
-											<div class="6u$ 12u$(xsmall)">
+                                                <input type="text" name="name" id="name" value="" placeholder="First Last" pattern="[a-zA-Z ]+" title="Letters Only" required/>
+                                            </div>
+                                            <div class="6u$ 12u$(xsmall)">
                                                 <th>Email</th>
-												<input type="email" name="email" id="email" value="" placeholder="e.g. mst3k@virginia.edu" required/>
-											</div>
-											<div class="6u 12u$(xsmall)">
-                                                <th>Password</th>
-												<input type="password" name="password" id="password" value="" placeholder="Enter Password" required/>
-											</div>
-											<div class="6u 12u$(xsmall)">
-                                                <th>Confirm Password</th>
-												<input type="password" name="password" id="password_verify" value="" placeholder="Verify Password" required/>
-											</div>
-											<div class="12u$">
-												<div class="select-wrapper">
-													<select name="school" id="school" required>
-														<option value="">-School-</option>
-														<option value="CLAS">College of Arts and Sciences</option>
-														<option value="SEAS">School of Engineering and Applied Sciences</option>
-														<option value="BATN">Frank Batten School of Leadership and Public Policy</option>
-														<option value="CURR">Curry School of Education</option>
-														<option value="ARCH">School of Architecture</option>
-														<option value="COMM">McIntire School of Commerce</option>
-													</select>
-												</div>
-											</div>
-											<div class="3u 12u$(small)">
-												<input type="radio" id="demo-priority-1" name="year" value="first" checked>
-												<label for="demo-priority-1">1st Year</label>
-											</div>
-											<div class="3u 12u$(small)">
-												<input type="radio" id="demo-priority-2" name="year" value="second">
-												<label for="demo-priority-2">2nd Year</label>
-											</div>
-											<div class="3u 12u$(small)">
-												<input type="radio" id="demo-priority-3" name="year" value="third">
-												<label for="demo-priority-3">3rd Year</label>
-											</div>
-											<div class="3u$ 12u$(small)">
-												<input type="radio" id="demo-priority-4" name="year" value="fourth">
-												<label for="demo-priority-4">4th Year/Graduate</label>
-											</div>
-											<!--<div class="6u$ 12u$(small)">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>-->
-											<div class="12u$ 12u$(large)">
+                                                <input type="email" name="email" id="email" value="" placeholder="e.g. mst3k@virginia.edu" required/>
+                                            </div>
+                                            <div class="12u$ 12u$(large)">
                                                 <th>Local Street Address</th>
-												<input type="text" name="address" id="address" value="" placeholder="e.g. 85 Engineer's Way" required/>
-											</div>
-											<div class="7u 12u$(xxsmall)">
+                                                <input type="text" name="address" id="address" value="" placeholder="e.g. 85 Engineer's Way" required/>
+                                            </div>
+                                            <div class="7u 12u$(xxsmall)">
                                                 <th>City</th>
-												<input type="text" name="city" id="city" value="" placeholder="e.g. Charlottesville" pattern="[a-zA-Z ]+" title="Letters Only." required/>
-											</div>
-											<div class="2u 12u$(xxxsmall)">
+                                                <input type="text" name="city" id="city" value="" placeholder="e.g. Charlottesville" pattern="[a-zA-Z ]+" title="Letters Only." required/>
+                                            </div>
+                                            <div class="2u 12u$(xxxsmall)">
                                                 <th>State</th>
-												<!--<input type="text" name="state" id="state" pattern ="[a-zA-z]{2}" title="Two Letters Only" value="" placeholder="e.g. VA" required/>-->
+                                                <!--<input type="text" name="state" id="state" pattern ="[a-zA-z]{2}" title="Two Letters Only" value="" placeholder="e.g. VA" required/>-->
                                                 <div class="select-wrapper">
                                                     <select name="state" id="state" required>
                                                         <option value="">-State-</option>
@@ -160,28 +125,19 @@
                                                         <option value="WY">Wyoming</option>
                                                     </select>
                                                 </div>
-											</div>
-											<div class="3u 12u$(xxsmall)">
+                                            </div>
+                                            <div class="3u 12u$(xxsmall)">
                                                 <th>Zip Code</th>
-												<input type="text" name="zip-code" id="zip-code" value="" placeholder="e.g. 22903" pattern="[0-9]{5}" title="5 Numbers Only." required/>
-											</div>
-
-											<div class="12u$">
-                                                <th>Additional Information</th>
-												<textarea name="demo-message" id="demo-message" placeholder="Any additional information for us?" rows="6"></textarea>
-											</div>
-                                            <div class="12u$ 12u$(small)">
-                                                <input type="checkbox" id="newsletter" name="newsletter">
-                                                    <label for="newsletter">Sign me up for Newsletters!</label>
-                                                    </div>
-											<div class="12u$">
-												<ul class="actions">
-													<li><input type="submit" value="Sign Up Now!" class="special" /></li>
-													<li><input type="reset" value="Reset" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
+                                                <input type="text" name="zip-code" id="zip-code" value="" placeholder="e.g. 22903" pattern="[0-9]{5}" title="5 Numbers Only." required/>
+                                            </div>
+                                            <div class="12u$">
+                                                <ul class="actions">
+                                                    <li><input type="submit" value="Submit" class="special"/></li>
+                                                    <li><a href="mem_index.php" class="button">Go Back</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </form>
 								</section>
 
 

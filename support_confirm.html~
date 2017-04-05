@@ -28,7 +28,7 @@
 										<ul>
 											<li><a href="index.html">Home</a></li>
 											<li><a href="about.html">About Us</a></li>
-											<li><a href="#">Log Out</a></li>
+											<li><a href="logout.php">Log Out</a></li>
 										</ul>
 									</div>
 								</li>
@@ -45,7 +45,7 @@
 									<h2 class="align-center"><span class="image checkmark"><img src="images/check_mark.png" alt="" /></span>Order Received!</h2>
                                     
                                     <p class="align-center">Thank you for your purchase with P.C.Tingles! This page serves as a confirmation that your order was properly received. We'll start preparing your item and you will receive an email from us very soon!</p>
-									<p class="align-center"><p class="align-center"><a href="mem_index.html" class="button">Shop More</a></p></p>
+									<p class="align-center"><p class="align-center"><a href="mem_index.php" class="button">Shop More</a></p></p>
 									<p class="align-center"><p class="align-center"><a href="index.html" class="button special">Go Home</a></p></p>
                                     
 								</section>

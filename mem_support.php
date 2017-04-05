@@ -1,10 +1,16 @@
 <!DOCTYPE HTML>
+<?php
+session_start();
+if(!isset($_SESSION["name"])) {
+	header("Location: index.html");
+}
+?>
 <!--
-	Elizabeth
+	felix
 -->
 <html>
 	<head>
-		<title>Request Submitted | P.C.Tingles</title>
+		<title>Support Request | P.C.Tingles</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -42,13 +48,29 @@
 							<div class="inner">
 
 								<section>
-									<h2 class="align-center"><span class="image checkmark"><img src="images/check_mark.png" alt="" /></span>Request Submitted!</h2>
-                                    
-                                    <p class="align-center">This page serves as a confirmation that your report was properly received. We'll read your request and the appropriate Tech Tingle will be in touch with you shortly!</p>
-									<p class="align-center"><p class="align-center"><a href="mem_index.php" class="button">Shop</a></p></p>
-									<p class="align-center"><p class="align-center"><a href="index.html" class="button special">Go Home</a></p></p>
-                                    
+									<h4>Support Request</h4>
+									<form method="post" action="">
+										<div class="row uniform">
+											<p>Let us know what you need help with and we will contact you as soon as possible!
+											</p>
+											<div class="8u 12u$(xsmall)">
+												<input type="text" name="subject" id="subject" value="" placeholder="Subject" required/>
+											</div>
+											
+
+											<div class="12u$">
+												<textarea name="description" id="description" placeholder="Description" rows="6"></textarea>
+											</div>
+											<div class="12u$">
+												<ul class="actions">
+													<li><input type="submit" value="Send Request" class="special" /></li>
+													<li><a href="mem_index.php" class="button">Go Back</a></li>
+												</ul>
+											</div>
+										</div>
+									</form>
 								</section>
+
 
 							</div>
 						</section>
@@ -78,6 +100,21 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+				var password = document.getElementById("password")
+				var confirm_password = document.getElementById("password_verify");
+
+				function validatePassword(){
+				  if(password.value != confirm_password.value) {
+				    confirm_password.setCustomValidity("Passwords Don't Match");
+				  } else {
+				    confirm_password.setCustomValidity('');
+				  }
+				}
+
+				password.onchange = validatePassword;
+				confirm_password.onkeyup = validatePassword;
+			</script>
 
 	</body>
 </html>
