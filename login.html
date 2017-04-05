@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <!--
-	Elizabeth
+	felix
 -->
 <html>
 	<head>
-		<title>Sale Complete | P.C.Tingles</title>
+		<title>Login | P.C.Tingles</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -28,8 +28,7 @@
 										<ul>
 											<li><a href="index.html">Home</a></li>
 											<li><a href="about.html">About Us</a></li>
-                                            <li><a hret="sales.html">Rentals</a></li>
-											<li><a href="signup.html">Sign Up</a></li>
+                                            <li><a href="sales.html">Rentals</a></li>
 											<!--<li><a href="elements.html">Rentals</a></li>-->
 											<li><a href="#">Log In</a></li>
 										</ul>
@@ -45,12 +44,29 @@
 							<div class="inner">
 
 								<section>
-									<h2 class="align-center"><span class="image checkmark"><img src="images/check_mark.png" alt="" /></span>Order Received!</h2>
-                                    
-                                    <p class="align-center">Thank you for your purchase with P.C.Tingles! This page serves as a confirmation that your order was properly received. We'll start preparing your item and you will receive an email from us very soon!</p>
-									<p class="align-center"><a href="sales.html" class="button">Shop More</a><a href="index.html" class="button special">Go Home</a></p>
-                                    
+									<h4>Member Login</h4>
+									<form method="post" action=""><!--FORM-->
+										<div class="row uniform">
+											<div class="6u$ 12u$(xsmall)">
+                                                <th>Email</th>
+												<input type="email" name="email" id="email" value="" placeholder="e.g. mst3k@virginia.edu" required/>
+											</div>
+											<div class="6u 12u$(xsmall)">
+                                                <th>Password</th>
+												<input type="password" name="password" id="password" value="" placeholder="Enter Password" required />
+											</div>
+											
+											<div class="12u$">
+												<ul class="actions">
+													<li><input type="submit" value="Sign In" class="special" /></li>
+												</ul>
+											</div>
+											
+										</div>
+										<a href="signup.html">Don't have an account? Register Now!</a>
+									</form>
 								</section>
+
 
 							</div>
 						</section>
@@ -80,6 +96,21 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+				var password = document.getElementById("password")
+				var confirm_password = document.getElementById("password_verify");
+
+				function validatePassword(){
+				  if(password.value != confirm_password.value) {
+				    confirm_password.setCustomValidity("Passwords Don't Match");
+				  } else {
+				    confirm_password.setCustomValidity('');
+				  }
+				}
+
+				password.onchange = validatePassword;
+				confirm_password.onkeyup = validatePassword;
+			</script>
 
 	</body>
 </html>
