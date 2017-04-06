@@ -49,7 +49,7 @@ if(!isset($_SESSION["name"])) {
 
 								<section>
 									<h4>Update Personal Information</h4>
-                                    <form method="post" action="">
+                                    <form method="post" action="mem_update_action.php">
                                         <div class="row uniform">
                                             <div class="6u 12u$(xsmall)">
                                                 <th>Name</th>

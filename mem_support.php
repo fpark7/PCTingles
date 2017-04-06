@@ -49,7 +49,7 @@ if(!isset($_SESSION["name"])) {
 
 								<section>
 									<h4>Support Request</h4>
-									<form method="post" action="">
+									<form method="post" action="mem_supportreqsendmail.php">
 										<div class="row uniform">
 											<p>Let us know what you need help with and we will contact you as soon as possible!
 											</p>
